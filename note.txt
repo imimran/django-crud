@@ -14,3 +14,6 @@ Create Django Project on windows:
 
 run Server:
     python manage.py runserver
+
+create App:
+    python manage.py startapp users    
