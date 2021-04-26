@@ -1,0 +1,16 @@
+
+
+package list:
+    pip list
+
+install Django:
+    pip install django
+
+Django Version check
+    python -m django --version 
+
+Create Django Project on windows:
+    python -m django startproject crud
+
+run Server:
+    python manage.py runserver
