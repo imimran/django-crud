@@ -1,7 +1,12 @@
 {% extends 'users/base.html' %}
- 
+{% load crispy_forms_tags  %}
 {% block content %}
 
-<p>Here we show User CRUD operation</p>
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success"><i class="fas fa-database"></i>Submit</button>
+</form>
+
 
 {% endblock content %}

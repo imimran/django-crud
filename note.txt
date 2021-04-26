@@ -25,4 +25,7 @@ install postgres package:
     pip install psycopg2
 
 after create model:
-    python manage.py makemigrations    
+    python manage.py makemigrations   
+
+Form Package:
+    pip install django-crispy-forms     
