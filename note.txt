@@ -16,4 +16,10 @@ run Server:
     python manage.py runserver
 
 create App:
-    python manage.py startapp users    
+    python manage.py startapp users
+
+migrate DB:
+    python manage.py migrate        
+
+install postgres package:
+    pip install psycopg2
