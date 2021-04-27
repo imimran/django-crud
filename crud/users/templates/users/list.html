@@ -8,7 +8,7 @@
             <td>Full Name</td>
             <td>Mobile</td>
             <td>Position</td>
-            
+             <td></td>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +17,9 @@
                 <td>{{user.fullname}}</td>
                 <td>{{user.mobile}}</td>
                 <td>{{user.position}}</td>
+                 <td> <a href="{% url 'user_update' user.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a></td>
                
             </tr>
         {% endfor %}

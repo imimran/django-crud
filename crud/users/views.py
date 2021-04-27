@@ -10,16 +10,24 @@ def user_list(request):
     return render(request, 'users/list.html', context )
 
 
-def user_form(request):
+def user_form(request, id=0):
     if request.method == 'GET':
-        form = UserForm()
+        if id == 0:
+            form = UserForm()
+        else:
+            user = User.objects.get(pk=id)
+            form = UserForm(instance=user)    
         return render(request, 'users/form.html', {'form': form})
 
     else:
-        form = UserForm(request.POST)
-        if form.is_valid() :
+        if id == 0:
+            form = UserForm(request.POST)
+        else:
+            user = User.objects.get(pk=id)
+            form = UserForm(request.POST, instance=user)      
+        if form.is_valid():
             form.save()
-        return redirect('/user/list.html')
+        return redirect('/user/list/')
 
 
 def user_delete(request):
