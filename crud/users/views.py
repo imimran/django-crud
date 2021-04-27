@@ -30,5 +30,7 @@ def user_form(request, id=0):
         return redirect('/user/list/')
 
 
-def user_delete(request):
-    return
+def user_delete(request, id):
+    user = User.objects.get(pk=id)
+    user.delete()
+    return redirect('/user/list')
