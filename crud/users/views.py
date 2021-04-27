@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from .form import UserForm
+from .models import User
 
 # Create your views here.
 
 
 def user_list(request):
-    return render(request, 'users/list.html')
+    context = {'user_list' : User.objects.all()}
+    return render(request, 'users/list.html', context )
 
 
 def user_form(request):
